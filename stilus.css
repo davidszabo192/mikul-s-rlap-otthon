@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0%;
+  background-image: url(/képek/hatter.jpg);
+}
+main,
+nav,
+article,
+footer {
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "h h h h"
+    "n n n n"
+    "a a a a"
+    "f f f f";
+  grid-area: m;
+  margin: auto;
+  width: 80%;
+  max-width: 800px;
+}
+header {
+  background-image: url(képek/szgy_klub_mikulas_bekes_kezdo_20171215.jpg);
+  background-repeat: no-repeat;
+  height: 600px;
+  background-size: cover;
+  grid-area: h;
+}
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  display: block;
+}
+nav {
+  grid-area: n;
+  background-color: red;
+}
+article {
+  grid-area: a;
+  background-color: lightgray;
+}
+form{
+  max-width: 100%;
+  width: 800px;
+}
+footer {
+  grid-area: f;
+  background-color: red;
+}
+@media screen and (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "h"
+      "n"
+      "a"
+      "f";
+  }
+
+  nav ul {
+    grid-template-columns: 1fr;
+  }
+}
